@@ -30,7 +30,6 @@ const Login = () => {
             setId('');
             setPw('');
             alert('로그인성공!');
-            setLoginMember(true);
         })
     }
      /* 로그아웃 이벤트 핸들러 */
