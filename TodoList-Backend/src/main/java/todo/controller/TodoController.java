@@ -84,6 +84,14 @@ public class TodoController {
 		return service.delete(todoNo);
 	}
 	
+	/** RestAPI테스트
+	 * @return 100
+	 */
+	@GetMapping("/test")
+	public int test() {
+		return 100;
+	}
+	
 	/*
 	 * CRUD : DataBase에서 데이터 조작의 기본적인 네가지 작업
 	 * Create : 새로운 데이터를 생성  insert
