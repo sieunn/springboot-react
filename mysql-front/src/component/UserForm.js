@@ -22,7 +22,8 @@ const UserForm = ({addUser}) => {
                     <label>이메일 : </label>
                     <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required/>
                 </div>
-                <button type="submit">유저 추가하기</button>
+                <button type="submit">유저 추가하기</button><br/>
+                <button type="submit">네이버 로그인을 통한 유저 추가</button>
             </form>
         </div>
     )
