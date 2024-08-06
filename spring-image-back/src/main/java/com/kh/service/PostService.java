@@ -2,11 +2,16 @@ package com.kh.service;
 
 import java.util.List;
 
-import oracle.jdbc.proxy.annotation.Post;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.kh.dto.Post;
+
 
 
 public interface PostService {
 	List <Post> findAll();
 	void insertPost(Post post);
-	void insertImage();
+	
+	//이미지 업로드를 도와주는 기능 목록 설정
+	void uploadImages(MultipartFile[] files, String title, String content);
 }
