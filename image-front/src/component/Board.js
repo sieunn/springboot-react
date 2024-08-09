@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../App.css';
 
 
 const Board =() => {
+ 
+  const uploadAPI = "http://localhost:9007/gallery/upload"
+  const postAPI = "http://localhost:9007/posts";
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
@@ -21,7 +26,7 @@ const Board =() => {
     formData.append("content", content);
 
     //자바 컨트롤러에 데이터 전송! post이용
-    axios.post("/gallery/upload", formData, {
+    axios.post(uploadAPI, formData, {
       headers: {
         //전송할 데이터에 글자가 아닌 파일이 함께 전송된다. 머릿말로 알려주기
         "Content-Type": "multipart/form-data",
@@ -30,12 +35,14 @@ const Board =() => {
     alert("자바로 이미지 전송했습니다.");
     //이미지 업로드를 db에 하고나서 업로드 된 이미지를 불러오기
     게시물가져오기();
+    setContent('');
+    setTitle('');
   };
 
   //const 기능을 작성해놓고 필요할 때 기능을 사용하기 위해 설정 (버튼 만들때만 만드는거 아님)
   const 게시물가져오기 = () => {
     axios
-      .get("http://localhost:9007/posts") //자바컨트롤러 url과 api 주소에서 데이터 가져오기
+      .get(postAPI) //자바컨트롤러 url과 api 주소에서 데이터 가져오기
       .then((response) => {
         setPosts(response.data);
         console.log(response.data);

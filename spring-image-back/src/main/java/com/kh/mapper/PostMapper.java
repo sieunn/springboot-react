@@ -11,4 +11,5 @@ import com.kh.dto.Post;
 public interface PostMapper {
 	List <Post> findAll();
 	void insertPost(Post post);
+	void updatePost(Post post);
 }

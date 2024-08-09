@@ -44,9 +44,9 @@ public class ProfileController {
 	 * */
 	@PostMapping("/upload")
 	public ResponseEntity<String> insertProfile(@RequestParam ("files") MultipartFile[] files,
-												@RequestParam ("username") String username,
-												@RequestParam ("profileImageUrl") String profileImageUrl){
-		service.uploadProfile(files, username, profileImageUrl);
+												@RequestParam ("username") String username
+												){
+		service.uploadProfile(files, username);
 		return ResponseEntity.ok("이미지업로드 성공!");
 	}
 		
