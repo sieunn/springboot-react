@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const NaverAPI = () => {
   return (
     <div>
       <a href="http://localhost:9010/naverLogin">
@@ -14,4 +14,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default NaverAPI;

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 리액트와 네이버로그인과 최종 연동되는 컨트롤러
  * */
 @RestController
-public class NaverRegistController {
+public class NaverAPIController {
 
 	@Value("${naver.client-id}")
 	private String clientId; 
@@ -55,7 +55,7 @@ public class NaverRegistController {
 	    String accessToken = getToken(response); //위 주소에서 작성한 토큰을 가져오겠다.
 	    
 	    //여기서 응답에 대한 결과를 전달 -> 나중에 프로젝트 합칠 때 지울 주소
-	    String redirectUrl = "http://localhost:3000/userinfo?access_token=" + accessToken;
+	    String redirectUrl = "http://localhost:3000/signup/naver?access_token=" + accessToken;
 	    HttpHeaders header = new HttpHeaders();
 	    header.add("Location",redirectUrl);
 	    
@@ -76,7 +76,7 @@ public class NaverRegistController {
 	}
 	
 	//나중에 callback에서 가져온 유저정보가 보이는 주소
-	@GetMapping("/userinfo")
+	@GetMapping("/signup/naver")
 	public ResponseEntity<String> getUserInfo(@RequestParam("access_token")String accessToken){
 		String apiURL = "https://openapi.naver.com/v1/nid/me";
 		HttpHeaders headers = new HttpHeaders();
