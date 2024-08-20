@@ -1,0 +1,42 @@
+.chickenform-container{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 80%;
+    margin: 20px auto;
+}
+.chickenform-container label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.chickenform-container input,
+.chickenform-container textarea {
+    /* 계산을 통해 100%에서 -20px */
+    width: calc(100%-20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    resize: vertical;
+}
+
+.chickenform-container button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /*hover 에 적힌 배경색으로 몇초동안 변화할지 설정*/
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+.chickenform-container button:hover{
+    background-color: #218838;
+}
