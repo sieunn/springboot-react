@@ -39,8 +39,7 @@ const ChickenForm = () => {
             <label>가격: <br/>
                 <input type="number" value={price} onChange={(e)=>setPrice(e.target.value)}/>
             </label>
-            <button onClick={제출버튼}>등록하기</button>
-            <button>메인으로 돌아가기</button>
+            <button className="submit-button" onClick={제출버튼}>등록하기</button>
         </div>
     )
 
