@@ -20,8 +20,8 @@ const AirPollutionData = () => {
 
                 //공기오염데이터 가져오기
                 const parsedData = Array.from(items).map(item => {
-                    const fullDateTime = item.getElementsByTagName("dataTime")[0]?.textContent;
-                    const yearMonth = fullDateTime ? fullDateTime.slice(0, 7) : 'N/A';
+                const fullDateTime = item.getElementsByTagName("dataTime")[0]?.textContent;
+                const yearMonth = fullDateTime ? fullDateTime.slice(0, 7) : 'N/A';
 
                     return {
                         stationName: item.getElementsByTagName("stationName")[0]?.textContent,

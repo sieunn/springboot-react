@@ -6,10 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity //mysql에 테이블이 존재하지 않으면 테이블 생성
 @Getter
 @Setter //룸북이나 자카르타 import X -> build.gradle(dependencies)에 spring이나 lombok 관련 설정이 있는지 확인 
+@ToString
 public class Chicken {
 	
 	@Id //primary key
