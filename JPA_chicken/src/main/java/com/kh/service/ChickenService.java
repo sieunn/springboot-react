@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.dto.Chicken;
 import com.kh.repository.ChickenRepository;
@@ -51,6 +53,12 @@ public class ChickenService {
 				.orElseThrow(()->new RuntimeException("일치하는 정보를 찾을 수 없습니다."));
 		chickenRepository.delete(c);
 	}
+	
+	//치킨 검색기능 추가
+	public List<Chicken> searchChickens(String query) {
+		return chickenRepository.findByChickenNameContainingIgnoreCase(query);
+	}
+	
 }
 
 

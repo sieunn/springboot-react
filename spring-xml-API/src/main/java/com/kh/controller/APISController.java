@@ -34,12 +34,12 @@ public class APISController {
 		return "측정결과 전달하기";
 	}
 	// 4. 대기질 예보통보 조회
-	@GetMapping("getMinuDustFrcstDspth")
+	@GetMapping("/getMinuDustFrcstDspth")
 	public void 예보통보조회() {
 		System.out.println("측정결과 전달하기");
 	}
 	// 5. 미세먼지 주간예보 조회
-	@GetMapping("getMinuDustWeekFrcstDspth")
+	@GetMapping("/getMinuDustWeekFrcstDspth")
 	public void 주간예보조회() {
 		 System.out.println("측정결과 전달하기");
 	}
