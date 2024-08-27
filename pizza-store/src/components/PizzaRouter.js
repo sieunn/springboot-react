@@ -3,6 +3,8 @@
 import { useState } from "react";
 import PizzaForm from "./PizzaForm";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
+import '../css/PizzaRouter.css';
 
 const PizzaRouter = () => {
     /* 모달 관련 변수와 기능들 */
@@ -27,7 +29,7 @@ const PizzaRouter = () => {
                 />
                 <button onClick={handleSearch}>검색하기</button>
             </div>
-            <button onClick={{openModal}}>메뉴 등록하기</button>
+            <button onClick={openModal}>메뉴 등록하기</button>
             {/* 모달을 열면 피자메뉴 설명 가격 작성 창이 나오고 닫으면 작성 창이 사라짐 */}
 
             <Modal isOpen={isModalOpen} onClose={closeMdoal}>
